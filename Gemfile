@@ -51,7 +51,7 @@ gem 'truemail'
 gem 'jquery-ui-rails'
 
 # file upload gem and Image editing
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem "mini_magick"
 
 group :development, :test do
