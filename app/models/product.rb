@@ -20,7 +20,7 @@ class Product < ApplicationRecord
     validates :prix, numericality: {greater_than: 0}
     
     # validates_format_of :prix
-    enum sexe: {Homme: "Homme", Femme: "Femme"}
+    enum sexe: {Men: "Men", Women: "Women"}
     enum weight_type: {Lbs: "lbs", Kg: "kg"}
 
 
