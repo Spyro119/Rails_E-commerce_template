@@ -11,14 +11,17 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    # @category = Category.find(:id)
+    @category = Category.find(params[:id])
     @products = Array.new
-    @products = Produit.where(:sexe => params[:sexe])
-    @products_for_man.each do |products|
-      if products.category_ids.include? @category.id
-        # puts "INCLUDES IT #{products.category_ids}"
-        @products.push(products)
-      end 
+    @products_ = Product.all
+    @products_.each do |product|
+      puts @category.name
+      puts "Product_TITLE => #{product.categories}"
+      product.categories.each do |product_category|
+        if product_category.name === @category.name 
+          @products.push(product)
+        end
+      end
     end
   end
 
@@ -81,6 +84,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.fetch(:category, {})
+      params.require(:category).permit(:name)
     end
 end

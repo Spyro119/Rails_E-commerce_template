@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get "pages/index"
   get "pages/login"
   get "index_images" => "index_images#index"
-  get "categories/:sexe/:id" => "categories#show"
+  get "categories/:id" => "categories#show"
 
   # post 'pages/login' => 'session#create', :as => :user_session
   
