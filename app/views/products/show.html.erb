@@ -1,10 +1,10 @@
 	<section class="page-header page-header-xs">
 		<div class="container">
-			<h1><%= @product.titre %></h1>
+			<h1><%= @product.title %></h1>
 			<!-- breadcrumbs -->
 			<ol class="breadcrumb">
-				<li><%= link_to "Accueil", root_url %></li>
-				<li><%= link_to "Retour", :back %></li>
+				<li><%= link_to "Home", root_url %></li>
+				<li><%= link_to "Back", :back %></li>
 			</ol><!-- /breadcrumbs -->
 		</div>
 	</section>
@@ -15,19 +15,22 @@
 
 						<!-- IMAGE -->
 						<div class="col-lg-4 col-sm-4">
-							
 							<div class="thumbnail relative mb-3">
 								<!-- 
 									IMAGE ZOOM 
 									data-mode="mouseover|grab|click|toggle"
 								-->
 								<figure id="zoom-primary" class="zoom" data-mode="mouseover">
+									<% if @product.images.first %>
 									<a class="lightbox bottom-right" href="<%= @product.images.first.photo%>" data-plugin-options='{"type":"image"}'><i class="fa fa-search"></i></a>
-									<img class="img-fluid" src="<%= @product.images.first.photo%>" width="1200" height="1500" alt="<%= @product.titre %>" />
+									<img class="img-fluid" src="<%= @product.images.first.photo%>" width="1200" height="1500" alt="<%= @product.title %>" />
 								</figure>
+									<% end %>
 							</div>
 
 							<!-- Thumbnails (required height:100px) -->
+						<% if @product.images.first %>							
+
 							<div data-for="zoom-primary" class="zoom-more owl-carousel owl-padding-3 featured" data-plugin-options='{"singleItem": false, "autoPlay": false, "navigation": true, "pagination": false}'>
 								<a class="thumbnail active" href="<%= @product.images.first.photo %>">
 									<img src="<%= @product.images.first.photo %>" height="100" alt="" />
@@ -41,6 +44,8 @@
 								<%end%>
 								<%end%>
 							</div>
+								<%end%>
+
 							<!-- /Thumbnails -->
 
 						</div>
@@ -55,16 +60,16 @@
 							<!-- /buttons -->
 							<!-- price -->
 							<div class="shop-item-price">
-								<%= ActionController::Base.helpers.number_to_currency(@product.prix) %> CAD
+								<%= ActionController::Base.helpers.number_to_currency(@product.price) %> CAD
 							</div>
 							<!-- /price -->
 							<hr />
 
 							<div class="clearfix mb-30">
-							<% if @product.total_quantity > 0 %>
-								<span class="float-right text-success"><i class="fa fa-check"></i> Disponible </span>
+							<% if @product.instance_variable_defined?(:@total_quantity) && @product.total_quantity > 0 %>
+								<span class="float-right text-success"><i class="fa fa-check"></i> Available </span>
 								<% else %>
-								<span class="float-right text-danger"><i class="fa fa-remove"></i> Non disponible </span>
+								<span class="float-right text-danger"><i class="fa fa-remove"></i> Unavailable </span>
 								<%end%>
 							</div>
 							<!-- short description -->
@@ -77,35 +82,9 @@
 								<input type="hidden" name="product_id" value="<%= @product.id %>" />
 								<!-- see assets/js/view/demo.shop.js -->
 
-								<%# Attributes there  %>
-								<input type="hidden" id="product_id" name="color" value="<%=@product.id%>" />
-								<input type="" id="color" name="color" value="<%= @product.sizes.first.colors.first.name %>" />
-								<input type="" id="qty" name="qty" value="1" />
-								<input type="" id="size" name="size" value="<%= @product.sizes.first.name %>" />
-								<!-- see assets/js/view/demo.shop.js -->
-								
-
-								<div class="btn-group float-left product-opt-size">
-									
-									<!-- data-val = size value or size id -->
-									<%= select_tag "product_size", options_from_collection_for_select(@product.sizes, "name", "name") %>
-								</div>
-								<!-- /btn-group -->
-
-										<%# for each color, here. %>
-									<div class="btn-group float-left product-opt-qty">
-									<%= select_tag "product_colors", options_from_collection_for_select(@product.sizes.first.colors, "name", "name") %>
-
-								</div><!-- /btn-group -->
 
 								<div class="btn-group float-left product-opt-qty">
 
-									 <select name="quantity" class= "product-qty-dd" id="product_quantity" >
-									<% (1..@product.sizes.first.colors.first.quantity).each do |i| %>
-
-										<option value="<%= i%> " data-val="<%= i%>"><%=i%></option>
-
-									<%end%>
 									</select> 
 								</div>
 								

@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # resources :product_sizes
-  # resources :size_colors
-  # resources :colors
-  # resources :product_sizes
-  # resources :sizes
   resources :images
   # resources :product_images
   # resources :product_categories
@@ -24,7 +19,6 @@ Rails.application.routes.draw do
   get "pages/login"
   get "index_images" => "index_images#index"
   get "categories/:sexe/:id" => "categories#show"
-  get 'products/:id/populate_color_list' => 'products#populate_color_list'
 
   # post 'pages/login' => 'session#create', :as => :user_session
   

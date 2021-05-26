@@ -10,34 +10,34 @@
                 <div class="clearfix">
                   <%# first_name %>
                   <div class="form-group">
-                    <%= f.text_field :first_name, placeholder: "Prénom", autocomplete: "first_name", :class => 'form-control', :required => true %>
+                    <%= f.text_field :first_name, placeholder: "First name", autocomplete: "first_name", :class => 'form-control', :required => true %>
                   </div>
                   <%# last_name %>
                   <div class="form-group">
-                    <%= f.text_field :last_name, placeholder: "Nom", autocomplete: "family-name", :class => 'form-control', :required => true %>
+                    <%= f.text_field :last_name, placeholder: "Last name", autocomplete: "family-name", :class => 'form-control', :required => true %>
                   </div>
                   <%# username%>
                   <div class="form-group">
-                    <%= f.text_field :username, placeholder: "Identifiant", autocomplete: "username", :class => 'form-control' %>
+                    <%= f.text_field :username, placeholder: "Username", autocomplete: "username", :class => 'form-control' %>
                   </div>
 								  <%# email %>
                   <div class="form-group">
-                    <%= f.email_field :email, placeholder: "Identifiant/email", autocomplete: "email", :class => 'form-control', :required => true %>
+                    <%= f.email_field :email, placeholder: "email", autocomplete: "email", :class => 'form-control', :required => true %>
                   </div>
                   <%# password %>
                   <div class="form-group">
-                    <%= f.password_field :password, placeholder: "Mot de passe (#{@minimum_password_length} caractères minimum)", autocomplete: "new-password" , :class => 'form-control', :required => true %>
+                    <%= f.password_field :password, placeholder: "Password (#{@minimum_password_length} characters minimum)", autocomplete: "new-password" , :class => 'form-control', :required => true %>
                   </div> 
                   <%# password confirmation %>
                   <div class="form-group">
-                    <%= f.password_field :password_confirmation, placeholder: "Confirmation du mot de passes", autocomplete: "new-password", :class => 'form-control', :required => true %>
+                    <%= f.password_field :password_confirmation, placeholder: "Password confirmation", autocomplete: "new-password", :class => 'form-control', :required => true %>
                   </div>
 								</div>
               <div class="mt-30 text-center">
-                <%= f.submit "Enregistrer", :class => 'btn btn-primary' %>
+                <%= f.submit "Sign up", :class => 'btn btn-primary' %>
               </div>
               <div class="mt-10 text-center">
-                <%= link_to 'Se connecter', new_user_session_path, :class => "btn btn-primary" %>
+                <%= link_to 'Login', new_user_session_path, :class => "btn btn-primary" %>
               </div>
               <% end %>
 							</div>

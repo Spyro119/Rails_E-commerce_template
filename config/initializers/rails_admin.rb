@@ -50,7 +50,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.excluded_models= [ProductCategory, ProductImage, ProductSize, SizeColor]
+  config.excluded_models= [ProductCategory, ProductImage]
 
   # config.model Imodel do
   #   exclude_fields :id
@@ -75,30 +75,21 @@ RailsAdmin.config do |config|
       exclude_fields :id
     end
 
-    config.model Size do
-      exclude_fields :id
-      # exclude_fields :product
-    end
-
-    config.model Color do 
-      exclude_fields :id
-    end
-
-        # Produics
+        # Products
   config.model Product do 
     object_label_method do
-      :titre
+      :title
     end
     exclude_fields :id
     #List in dashboard
     list do
       include_all_fields
-      field :prix do 
+      field :price do 
         formatted_value do
           ActionController::Base.helpers.number_to_currency(formatted_value)
         end
       end
-      field :coût_de_production do
+      field :production_cost do
         formatted_value do 
           ActionController::Base.helpers.number_to_currency(formatted_value)
         end
@@ -112,9 +103,6 @@ RailsAdmin.config do |config|
       configure :weight_type do
         hide
       end
-      field :total_quantity do
-        read_only true
-      end
 
       # field :images do
       #   pretty_value do
@@ -127,30 +115,28 @@ RailsAdmin.config do |config|
     #On Create
     create do 
       include_all_fields
-      field :prix do
+      field :price do
         formatted_value do
           sprintf "%.2f", formatted_value
         end
       end
-      field :coût_de_production do
+      field :production_cost do
         formatted_value do
           sprintf "%.2f", formatted_value
         end
       end
-      # field :images do
-      #   label [:object].display_image
-      # end
+
     end
     #On edit
     edit do
       include_all_fields
-      field :prix do
+      field :price do
         formatted_value do
           sprintf "%.2f", formatted_value
         end
       end
-      :coût_de_production.nil? 
-      field :coût_de_production do
+      :production_cost.nil? 
+      field :production_cost do
         formatted_value do
           sprintf "%.2f", formatted_value
       end
@@ -159,12 +145,12 @@ RailsAdmin.config do |config|
     #On Show
     show do 
     include_all_fields
-      field :prix do
+      field :price do
         formatted_value do
           ActionController::Base.helpers.number_to_currency(formatted_value)
         end
       end
-      field :coût_de_production do
+      field :production_cost do
         formatted_value do
           ActionController::Base.helpers.number_to_currency(formatted_value)
         end
@@ -177,9 +163,9 @@ RailsAdmin.config do |config|
       configure :weight_type do
         hide
       end
-      field :total_quantity do
-        read_only true
-      end
+      # field :total_quantity do
+      #   read_only true
+      # end
     end
   end
 

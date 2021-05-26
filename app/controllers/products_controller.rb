@@ -32,26 +32,6 @@ class ProductsController < ApplicationController
 
   end
 
-
-  def populate_color_list
-    @product = Product.find(params[:id])
-    # puts Size.find(25).product_ids
-    size = @product.sizes.where(:name => params[:size_name])
-    color = Array.new()
-
-    size.each do |s|
-      puts s.colors
-      s.colors.each do |c|
-      color.push(c)
-      puts c.name
-      end
-    end
-    puts color
-    respond_to do |format|
-      format.json { render :json => color }
-    end
-  end
-
   # POST /products
   # POST /products.json
   def create

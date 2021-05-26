@@ -257,25 +257,12 @@ fr:
       image: 
         created_at: créer le
         updated_at: modifié le 
-      size: 
-        name: nom
-        created_at: créer le
-        updated_at: modifié le
-        quantity: quantité
-      color:
-        name: nom
-        quantity: quantité
-        created_at: créer le
-        updated_at: modifié le
-        size: grandeurs
-
       product:
         created_at: créer le
         updated_at: modifié le
         categories: catégories
         weight: poids
         weight_type: Unité de poids
-        sizes: grandeurs
         total_quantity: quantité totale
       
 
@@ -298,12 +285,6 @@ fr:
       image: 
         one: image
         other: images
-      size:
-        one: grandeur
-        other: grandeurs
-      color:
-        one: couleur
-        other: couleurs
       product:
         one: produit
         other: produits

@@ -9,27 +9,27 @@
 									<div class="clearfix">
 										<!-- Email/Username -->
 										<div class="form-group">
-                      <%= f.text_field :login, placeholder: "Identifiant/email", autofocus: true, autocomplete: "email", :class => 'form-control', :required => true %>
+                      <%= f.text_field :login, placeholder: "Username/Email", autofocus: true, autocomplete: "email", :class => 'form-control', :required => true %>
 										</div>
 										<!-- Password -->
 										<div class="form-group">
-                    <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "current-password", :class => 'form-control', :required => true %>
+                    <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password", :class => 'form-control', :required => true %>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6 col-sm-6 col-6">
 											<!-- Inform Tip -->                                        
 											<div class="form-tip pt-20">
-												<a class="no-text-decoration fs-13 mt-10 block" href="#">Mot de passe oublié?</a>
+												<a class="no-text-decoration fs-13 mt-10 block" href="#">Forgot your password?</a>
 											</div>
 										</div>
 									</div>
 									<div class="mt-30 text-center">
                     					<div class="btn ">
-                    					    <%= f.submit "Connexion", :class => 'btn btn-primary'%>
+                    					    <%= f.submit "Sign in", :class => 'btn btn-primary'%>
                     					</div>
 										<div class="mt-10 text-center">
-										<%= link_to 'Créer un compte', new_user_registration_path, :class => "btn btn-primary" %>
+										<%= link_to 'Register new account', new_user_registration_path, :class => "btn btn-primary" %>
 								</div>
 									</div>
                   				<% end %>

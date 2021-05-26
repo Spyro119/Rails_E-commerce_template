@@ -52,7 +52,7 @@
 							<nav class="nav-main">
 								<ul id="topMain" class="nav nav-pills nav-main">
 								<li class="dropdown">
-									<a class="dropdown-toggle"> Nouveauté </a>
+									<a class="dropdown-toggle"> New items </a>
 									<ul class="dropdown-menu">
 
 									<!-- Items created within a week -->
@@ -60,78 +60,43 @@
 									<% time = 1.week.ago %>
 									<% new_products = Product.where(:created_at => time...Time.now).order('created_at DESC')%>
 									<% new_products.each do |products|%>
-										<li><%= link_to products.titre, product_path(products.id) %> </li>
+										<li><%= link_to products.title, product_path(products.id) %> </li>
 										<%end%>
-										<li><%= link_to "Toutes nos nouveautés", products_path(time: time) %> </li>
+										<li><%= link_to "All our new items", products_path(time: time) %> </li>
 										<%else%>
 										<li> Items coming soon !</li>
 										<%end%>
 									</ul>
 								</li>
-								<li class="dropdown">
+								<!--  Categories below -->
+								<%# <li class="dropdown">
 									<a class="dropdown-toggle" href="#"> Men </a>
 									<ul class="dropdown-menu">
-										<% if Product && Category %>
-										 <% category = Array.new %>
-										<% products_for_man = Product.where(sexe: "Men") 
-										 products_for_man.each do |products|  
-										 products.category_ids.uniq.each do |uniq|
-											 puts " uniq ID #{uniq}"
-											 category.push(uniq)
-											 end
-											 test = category.uniq
-										end %>
-										<% 
-										category.uniq.each do |uniqId| 
-										@category = Category.find(uniqId)%>
-										<li><%= link_to @category.name, category_path(id: uniqId, sexe: "Men") %></li>
-										<%end%>
-										<%else%>
-										<li> Items coming soon !</li>
-										<%end%>
 									</ul>
 
 								</li>
 								<li class="dropdown">
 									<a class="dropdown-toggle"> Women </a>
 									<ul class="dropdown-menu">
-									<!-- Item categories Femme-->
-									<% if Product && Category %>
-										 <% category = Array.new %>
-										<% products_for_woman = Product.where(sexe: "women") 
-										 products_for_woman.each do |products|  
-										 products.category_ids.uniq.each do |uniq|
-											 puts " uniq ID #{uniq}"
-											 category.push(uniq)
-											 end
-											 test = category.uniq
-										end %>
-										<% 
-										category.uniq.each do |uniqId| 
-										@category = Category.find(uniqId)%>
-										<li><%= link_to @category.name, category_path(id: uniqId, sexe: "Women") %></li>
-										<%end%>
-										<% else %>
-										<li> Items coming soon !</li>
-										<%end%>
+
 									</ul>
 									
 
-								</li>
+								</li> %>
 								<%# if User is logged_in  %>
 
 								<% if current_user %>
 									<li class="dropdown">
-										<a class="dropdown-toggle">Mon Compte</a>
+										<a class="dropdown-toggle">My account</a>
 										<ul class="dropdown-menu">
-                          					<li> <%= link_to 'Modifier mon compte', edit_user_registration_path  %> </li> 
-                          					<li> <%= link_to "Déconnection", destroy_user_session_path, method: :delete %> </li>
+                          					<li> <%= link_to 'Edit my account', edit_user_registration_path  %> </li> 
+                          					<li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
 										</ul>
 									</li>
 
 								<% else %>
 
-									<li><%= link_to 'Se connecter', pages_login_url %></li>
+									<li><%= link_to 'Login', pages_login_url %></li>
 
 								<%end%>
 

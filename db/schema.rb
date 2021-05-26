@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_043923) do
+ActiveRecord::Schema.define(version: 2021_01_24_200314) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "colors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,40 +50,15 @@ ActiveRecord::Schema.define(version: 2021_01_26_043923) do
     t.index ["product_id"], name: "index_product_images_on_product_id"
   end
 
-  create_table "product_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "size_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_product_sizes_on_product_id"
-    t.index ["size_id"], name: "index_product_sizes_on_size_id"
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "titre", default: "", null: false
+    t.string "title", default: "", null: false
     t.string "description"
     t.float "price", default: 0.0, null: false
-    t.float "production_cose"
-    t.string "sexe", default: "Men", null: false
+    t.float "production_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "weight", precision: 10
     t.string "weight_type", default: "lbs", null: false
-  end
-
-  create_table "size_colors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "size_id"
-    t.bigint "color_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["color_id"], name: "index_size_colors_on_color_id"
-    t.index ["size_id"], name: "index_size_colors_on_size_id"
-  end
-
-  create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -113,8 +81,4 @@ ActiveRecord::Schema.define(version: 2021_01_26_043923) do
   add_foreign_key "product_categories", "products"
   add_foreign_key "product_images", "images"
   add_foreign_key "product_images", "products"
-  add_foreign_key "product_sizes", "products"
-  add_foreign_key "product_sizes", "sizes"
-  add_foreign_key "size_colors", "colors"
-  add_foreign_key "size_colors", "sizes"
 end
