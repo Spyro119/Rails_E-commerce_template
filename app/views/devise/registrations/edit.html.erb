@@ -1,0 +1,72 @@
+
+
+
+<body class="smoothscroll enable-animation">
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 offset-md-3">
+							<div>
+                <h2>Modifier votre compte <%#= resource_name.to_s.humanize %></h2>
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "m-10", method: :put }) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="clearfix">
+                  <%# first_name %>
+                  <div class="form-group">
+                  <%= f.label :first_name %> 
+                    <%= f.text_field :first_name, placeholder: "Prénom", autocomplete: "first_name", :class => 'form-control', :required => true %>
+                  </div>
+                  <%# last_name %>
+                  <div class="form-group">
+                    <%= f.label :last_name %>
+                    <%= f.text_field :last_name, placeholder: "Nom", autocomplete: "family-name", :class => 'form-control', :required => true %>
+                  </div>
+                  <%# username%>
+                  <div class="form-group">
+                    <%= f.label :username %>
+                    <%= f.text_field :username, placeholder: "Identifiant", autocomplete: "username", :class => 'form-control' %>
+                  </div>
+								  <%# email %>
+                  <div class="form-group">
+                  <%= f.label :email%>
+                    <%= f.email_field :email, placeholder: "Identifiant/email", autocomplete: "email", :class => 'form-control', :required => true %>
+                  </div>
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <div>Présentement en attente de confirmation pour: <%= resource.unconfirmed_email %></div>
+                  <% end %>
+                  <%# password %>
+                  <div class="form-group">
+                    <%= f.label :password %> <i> Laisser vide si vous ne désirez pas changer de mot de passe </i>
+                    <%= f.password_field :password, placeholder: "Mot de passe (#{@minimum_password_length} caractères minimum)", autocomplete: "new-password" , :class => 'form-control' %>
+                  </div> 
+                  <%# password confirmation %>
+                  <div class="form-group">
+                    <%= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation, placeholder: "Confirmation du mot de passes", autocomplete: "new-password", :class => 'form-control'%>
+                  </div>
+                  <%# actual password %>
+                  <div class ="form-group">
+                    <%= f.label :current_password %> <i>(Vous devez entrer votre mot de passe actuel pour confirmer les changements)</i><br />
+                    <%= f.password_field :current_password, placeholder: "Mot de passe actuel", :class => 'form-control' %>
+								  </div>
+                </div>
+              <div class="mt-30 text-center">
+                <%= f.submit "Enregistrer", :class => 'btn btn-primary' %>
+              </div>
+              <% end %>
+              
+              </div>
+              <div class="mt-10 text-center">
+              <%= button_to "Supprimer mon compte", registration_path(resource_name), :class => 'btn btn-primary', data: { confirm: "Êtes-vous sûr?" }, method: :delete %>
+              <%= link_to "Retour", :back %>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+
+      
+
+

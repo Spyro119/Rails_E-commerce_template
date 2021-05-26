@@ -1,0 +1,526 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+fr:
+
+  admin:
+    js:
+      true: Vrai
+      false: Faux
+      is_present: Est présent
+      is_blank: Est vide
+      date: Date ...
+      between_and_: Entre le ... et le ...
+      today: Aujourd'hui
+      yesterday: Hier
+      this_week: Cette semaine
+      last_week: La semaine dernière
+      number: Nombre ...
+      contains: Contient
+      is_exactly: Est exactement
+      starts_with: Commence par
+      ends_with: Se termine par
+    loading: "Chargement..."
+    home:
+      name: "Accueil"
+    pagination:
+      previous: "&laquo; Préc."
+      next: "Suiv. &raquo;"
+      truncate: "…"
+    misc:
+      filter_date_format: "dd/mm/yy" # a combination of 'dd', 'mm' and 'yy' with any delimiter. No other interpolation will be done!
+      search: "Recherche"
+      filter: "Filtre"
+      refresh: "Rafraîchir"
+      show_all: "Montrer tout"
+      add_filter: "Ajouter un filtre"
+      bulk_menu_title: "Élements sélectionnés"
+      remove: "Supprimer"
+      add_new: "Ajouter"
+      chosen: "Choisi %{name}"
+      chose_all: "Choisir tout"
+      clear_all: "Effacer tout"
+      up: "Monter"
+      down: "Descendre"
+      navigation: "Navigation"
+      navigation_static_label: "Liens"
+      log_out: "Se déconnecter"
+      ago: "il y a"
+    flash:
+      successful: "%{name} : %{action} avec succès"
+      error: "%{name} : n'a pas pu être %{action}"
+      noaction: "Aucune action n'a été effectuée"
+      model_not_found: "Le modèle '%{model}' est introuvable"
+      object_not_found: "%{model} avec l'ID '%{id}' est introuvable"
+    table_headers:
+      model_name: "Nom du modèle"
+      last_used: "Dernière utilisation"
+      records: "Enregistrements"
+      username: "Nom d'utilisateur"
+      changes: "Changements"
+      created_at: "Date/Heure"
+      item: "Élement"
+      message: "Message"
+      last_created: "Dernière création"
+    actions:
+      dashboard:
+        title: "Administration"
+        menu: "Panneau de contrôle"
+        breadcrumb: "Panneau de contrôle"
+      index:
+        title: "Liste des %{model_label_plural}"
+        menu: "Liste"
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "Détails pour %{model_label} '%{object_label}'"
+        menu: "Voir"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "Voir dans l'application"
+      new:
+        title: "Nouveau %{model_label}"
+        menu: "Ajouter nouveau"
+        breadcrumb: "Nouveau"
+        link: "Ajouter un nouveau %{model_label}"
+        done: "créé(e)"
+      edit:
+        title: "Modifier %{model_label} '%{object_label}'"
+        menu: "Modifier"
+        breadcrumb: "Modifier"
+        link: "Modifier ce %{model_label}"
+        done: "mis(e) à jour"
+      delete:
+        title: "Supprimer %{model_label} '%{object_label}'"
+        menu: "Supprimer"
+        breadcrumb: "Supprimer"
+        link: "Supprimer '%{object_label}'"
+        done: "supprimé(e)"
+      bulk_delete:
+        title: "Supprimer %{model_label_plural}"
+        menu: "Suppression multiple"
+        breadcrumb: "Suppression multiple"
+        bulk_link: "Supprimer les %{model_label_plural} sélectionné(e)s"
+      export:
+        title: "Exporter %{model_label_plural}"
+        menu: "Exporter"
+        breadcrumb: "Exporter"
+        link: "Exporter les %{model_label_plural} trouvé(e)s"
+        bulk_link: "Exporter les %{model_label_plural} trouvé(e)s"
+        done: "exporté(e)s"
+      history_index:
+        title: "Historique des %{model_label_plural}"
+        menu: "Historique"
+        breadcrumb: "Historique"
+      history_show:
+        title: "Historique de %{model_label} '%{object_label}'"
+        menu: "Historique"
+        breadcrumb: "Historique"
+    form:
+      cancel: "Annuler"
+      basic_info: "Infos de base"
+      required: "Obligatoire"
+      optional: "Optionnel"
+      one_char: "caractère"
+      char_length_up_to: "longueur maxi. :"
+      char_length_of: "longueur :"
+      save: "Enregistrer"
+      save_and_add_another: "Enregistrer et ajouter un autre"
+      save_and_edit: "Enregister et modifier"
+      all_of_the_following_related_items_will_be_deleted: "Tous les éléments relatifs suivants peuvent être également supprimés ou rendus orphelins :"
+      are_you_sure_you_want_to_delete_the_object: "Êtes-vous sûr(e) de vouloir supprimer ce(tte) %{model_name}"
+      confirmation: "Oui, je suis sûr(e)"
+      bulk_delete: "Les objets suivants vont être supprimés, ce qui pourrait supprimer ou rendre orphelin certaines de ces dépendances :"
+      new_model: "%{name} (nouveau)"
+    export:
+      confirmation: "Exporter vers %{name}"
+      select: "Sélectionnez les champs à exporter"
+      select_all_fields: "Sélectionner tous les champs"
+      fields_from: "Champs de %{name}"
+      fields_from_associated: "Champ du (de la) %{name} associé"
+      display: "Affichage %{name}: %{type}"
+      options_for: "Options pour %{name}"
+      empty_value_for_associated_objects: "<empty>"
+      click_to_reverse_selection: 'Cliquer pour inverser la sélection'
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Encoder en"
+        encoding_to_help: "Choisissez l'encodage de sortie. Laissez vide pour laisser les données non-encodées (%{name})"
+        skip_header: "Aucun en-tête"
+        skip_header_help: "Ne pas afficher d'en-tête (pas de description de champ)"
+        default_col_sep: ","
+        col_sep: "Séparateur de colonne"
+        col_sep_help: "Laisser blanc pour la valeur par défaut ('%{value}')" # value is default_col_sep
+
+  unauthorized:
+    manage:
+      all: "Vous n'avez pas accès à cette page."
+
+  devise:
+    confirmations:
+      confirmed: "Votre compte a été validé."
+      send_instructions: "Vous allez recevoir les instructions nécessaires à la confirmation de votre compte dans quelques minutes."
+      send_paranoid_instructions: "Si votre e-mail existe dans notre base de données, vous allez bientôt recevoir un e-mail contenant les instructions de confirmation de votre compte."
+    failure:
+      already_authenticated: "Vous êtes déjà connecté."
+      inactive: "Votre compte n'est pas encore activé."
+      invalid: "Email et/ou mot de passe incorrect(s)."
+      last_attempt: "Vous avez droit à une tentative avant que votre compte ne soit verrouillé."
+      locked: "Votre compte est verrouillé."
+      not_found_in_database: "Email et/ou mot de passe incorrect(s)."
+      timeout: "Votre session est expirée. Veuillez vous reconnecter pour continuer."
+      unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
+      unconfirmed: "Vous devez valider votre compte pour continuer."
+    mailer:
+      confirmation_instructions:
+        subject: "Instructions de confirmation"
+      reset_password_instructions:
+        subject: "Instructions pour changer le mot de passe"
+      unlock_instructions:
+        subject: "Instructions pour déverrouiller le compte"
+      email_changed:
+        subject: "Votre adresse e-mail a été modifiée avec succès"
+      password_change:
+        subject: "Votre mot de passe a été modifié avec succès"
+    omniauth_callbacks:
+      failure: "Nous n'avons pas pu vous authentifier via %{kind} : '%{reason}'."
+      success: "Authentifié avec succès via %{kind}."
+    passwords:
+      no_token: "Vous ne pouvez accéder à cette page sans passer par un e-mail de réinitialisation de mot de passe. Si vous êtes passé par un e-mail de ce type, assurez-vous d'utiliser l'URL complète."
+      send_instructions: "Vous allez recevoir les instructions de réinitialisation du mot de passe dans quelques instants."
+      send_paranoid_instructions: "Si votre e-mail existe dans notre base de données, vous allez recevoir un lien de réinitialisation par e-mail."
+      updated: "Votre mot de passe a été édité avec succès, vous êtes maintenant connecté."
+      updated_not_active: "Votre mot de passe a été changé avec succès."
+    registrations:
+      destroyed: "Votre compte a été supprimé avec succès. Nous espérons vous revoir bientôt."
+      signed_up: "Bienvenue, vous êtes connecté."
+      signed_up_but_inactive: "Vous êtes bien enregistré. Vous ne pouvez cependant pas vous connecter car votre compte n'est pas encore activé."
+      signed_up_but_locked: "Vous êtes bien enregistré. Vous ne pouvez cependant pas vous connecter car votre compte est verrouillé."
+      signed_up_but_unconfirmed: "Un message contenant un lien de confirmation a été envoyé à votre adresse email. Ouvrez ce lien pour activer votre compte."
+      update_needs_confirmation: "Votre compte a bien été mis à jour mais nous devons vérifier votre nouvelle adresse email. Merci de vérifier vos emails et de cliquer sur le lien de confirmation pour finaliser la validation de votre nouvelle adresse."
+      updated: "Votre compte a été modifié avec succès."
+      updated_but_not_signed_in: "Votre compte a été modifié avec succès. Merci de vous reconnecter."
+    sessions:
+      signed_in: "Connecté."
+      signed_out: "Déconnecté."
+      already_signed_out: "Déconnecté."
+    unlocks:
+      send_instructions: "Vous allez recevoir les instructions nécessaires au déverrouillage de votre compte dans quelques instants."
+      send_paranoid_instructions: "Si votre compte existe, vous allez bientôt recevoir un email contenant les instructions pour le déverrouiller."
+      unlocked: "Votre compte a été déverrouillé avec succès, vous êtes maintenant connecté."
+  errors:
+    messages:
+      already_confirmed: "a déjà été validé(e), veuillez essayer de vous connecter"
+      confirmation_period_expired: "à confirmer dans les %{period}, merci de faire une nouvelle demande"
+      expired: "a expiré, merci d'en faire une nouvelle demande"
+      not_found: "n'a pas été trouvé(e)"
+      not_locked: "n'était pas verrouillé(e)"
+      not_saved:
+        one: "1 erreur a empêché ce(tte) %{resource} d'être sauvegardé(e) :"
+        other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
+  errors:
+    messages:
+    #   carrierwave_processing_error: failed to be processed
+    #   carrierwave_integrity_error: is not of an allowed file type
+    #   carrierwave_download_error: N'a pas pu être téléchargé
+    #   extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
+    #   extension_blacklist_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
+    #   content_type_whitelist_error: "You are not allowed to upload %{content_type} files, allowed types: %{allowed_types}"
+    #   content_type_blacklist_error: "You are not allowed to upload %{content_type} files"
+    #   rmagick_processing_error: "Failed to manipulate with rmagick, maybe it is not an image?"
+    #   mini_magick_processing_error: "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}"
+      min_size_error: "La taille du fichier doit être plus grand que %{min_size}"
+      max_size_error: "La taille du fichier doit être plus petite que %{max_size}"
+      
+  activerecord:
+
+    attributes:
+      user:
+        email: courriel
+        first_name: prénom
+        last_name: Nom
+        username: identifiant
+        is_admin: admin?
+      category:
+        name: nom
+        created_at: créer le
+        updated_at: modifié le
+      index_image:
+        created_at: créer le
+        updated_at: modifié le
+      product_category:
+        category: catégorie
+        created_at: créer le
+        updated_at: modifié le
+      product_image:
+        photo: photo
+        created_at: créer le
+        updated_at: modifié le
+      image: 
+        created_at: créer le
+        updated_at: modifié le 
+      size: 
+        name: nom
+        created_at: créer le
+        updated_at: modifié le
+        quantity: quantité
+      color:
+        name: nom
+        quantity: quantité
+        created_at: créer le
+        updated_at: modifié le
+        size: grandeurs
+
+      product:
+        created_at: créer le
+        updated_at: modifié le
+        categories: catégories
+        weight: poids
+        weight_type: Unité de poids
+        sizes: grandeurs
+        total_quantity: quantité totale
+      
+
+    models:
+      category: 
+        one: catégorie
+        other: catégories
+      index_image:
+        one: image page d'accueil
+        other: images d'accueil
+      product_category: 
+        one: catégorie de produits
+        other: catégories de produits
+      product_image: 
+        one: image de produits
+        other: images de produits
+      user:
+        one: utilisateur
+        other: utilisateurs
+      image: 
+        one: image
+        other: images
+      size:
+        one: grandeur
+        other: grandeurs
+      color:
+        one: couleur
+        other: couleurs
+      product:
+        one: produit
+        other: produits
+
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+            dépendants existent
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%Y-%m-%d"
+      long: "%d %B %Y"
+      short: "%y-%m-%d"
+    month_names:
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
+      x_months:
+        one: 1 mois
+        other: "%{count} mois"
+      x_years:
+        one: 1 an
+        other: "%{count} ans"
+    prompts:
+      second: Seconde
+      minute: Minute
+      hour: Heure
+      day: Jour
+      month: Mois
+      year: Année
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: 'Validation échouée : %{errors}'
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      other_than: doit être différent de %{count}
+      present: doit être vide
+      required: doit exister
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          eb: Eo
+          gb: Go
+          kb: ko
+          mb: Mo
+          pb: Po
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%H h %M min %S s"
+      long: "%A %d %B %Y %H h %M"
+      short: "%H h %M"
+    pm: pm

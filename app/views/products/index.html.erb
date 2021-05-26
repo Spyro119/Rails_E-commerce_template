@@ -1,0 +1,134 @@
+<p id="notice"><%= notice %></p>
+
+
+	<section class="page-header page-header-xs">
+		<div class="container">
+			<h1>Nouveautés</h1>
+			<!-- breadcrumbs -->
+			<ol class="breadcrumb">
+				<li><%= link_to "Accueil", root_url %></li>
+				<li><%= link_to "Retour", :back %></li>
+			</ol><!-- /breadcrumbs -->
+		</div>
+	</section>
+			
+	<!-- /PAGE HEADER -->
+	
+	<section>
+		<div class="container">
+			<ul class="shop-item-list row list-inline m-0">
+
+				<% @products.each do |product| %>
+					<!-- ITEM -->
+					<li class="col-lg-12" >
+						<div class="shop-item clearfix">
+							<% if Image.find(product.image_ids).length > 1 %>
+								<div class="thumbnail">
+									<!-- product image(s) -->
+									<%= link_to product_url(id:product.id), :class => "shop-item-image" do %>
+										<!-- CAROUSEL -->
+										<div class="owl-carousel m-0" data-plugin-options='{"singleItem": true, "autoPlay": 5000, "navigation": false, "pagination": true, "transitionStyle":"fadeUp"}'>
+											<%product.images.each do |image|%>
+												<img class="img-fluid" src="<%=image.photo%>" alt="">
+											<%end%>
+										</div>
+									<%end%>
+									<!-- product more info -->
+									<%# <div class="shop-item-info">
+										<span class="badge badge-success">NEW</span>
+										<span class="badge badge-danger">SALE</span>
+									</div> %>
+									<!-- /product more info -->
+								</div>
+
+							<% else %>
+								<div class="thumbnail">
+								<!-- product image(s) -->
+									<%= link_to product_url(id:product.id), :class => "shop-item-image" do %>
+										<div class="m-0">
+											<%product.images.each do |image|%>
+												<img class="img-fluid" src="<%=image.photo%>" alt="">
+											<%end%>
+										</div>
+									<%end%>
+								</div>
+							<%end%>
+								
+							<div class="shop-item-summary">
+								<h2><%= product.titre %></h2>
+									
+									<!-- rating -->
+									<%# <div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div> %>
+									<!-- /rating -->
+									
+								<p><!-- product short description -->
+								<%= product.description %>
+								</p><!-- /product short description -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									<%# <span class="line-through">$98.00</span> %>
+									<%= ActionController::Base.helpers.number_to_currency(product.prix)  %> CAD 
+								</div>
+								<!-- /price -->
+
+								<!-- buttons -->
+								<div class="shop-item-buttons">
+									<a class="btn btn-light" href=""><i class="fa fa-cart-plus"></i> Ajouter au panier </a>
+									<!-- replace data-item-id width the real item ID - used by js/view/demo.shop.js -->
+									<%# <a class="btn btn-light add-wishlist" href="#" data-item-id="1" data-toggle="tooltip" title="Add To Wishlist"><i class="fa fa-heart p-0"></i></a> %>
+								</div>
+								<!-- /buttons -->
+							</div>
+						</div>
+					</li>
+					<!-- /ITEM -->
+
+              	<% end %>
+			</ul>
+			<hr />
+			<!-- Pagination Default -->
+			<%# <div class="text-center">
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+					<li class="page-item active"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">4</a></li>
+					<li class="page-item"><a class="page-link" href="#">5</a></li>
+					<li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+				</ul>
+			</div> %>
+			<!-- /Pagination Default -->
+					
+		</div>
+	</section>
+
+
+    <footer id="footer" class="footer-fixed opacity-9">
+		<div class="container mb-0 p-0 clearfix fs-12">
+
+			<!-- Social Icons -->
+			<div class="clearfix float-left mobile-block text-center">
+				<a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/alexandra.derepentigny.3/posts/2816996885185747" class="social-icon social-icon-sm social-icon-border social-facebook float-left" data-toggle="tooltip" data-placement="top" title="Facebook">
+					<i class="icon-facebook"></i>
+					<i class="icon-facebook"></i>
+				</a>
+
+				<span class="float-left footer-links hidden-xs-down">
+					<span>(+1) (819) 456-7890</span>
+					<a href="#">Contact</a>
+					<a href="#">FAQ</a>
+					<a href="#">Cart (0)</a> <!-- php ? -->
+				</span>
+			</div>
+			<!-- /Social Icons -->
+					
+			<span class="hidden-xs-down fs-13 line-h-30 float-right">
+				&copy;  <script>
+            			  var CurrentYear = new Date().getFullYear()
+            			  document.write(CurrentYear)
+        				</script> Dyfresh. All Rights Reserved.
+			</span>
+		</div>
+	</footer>

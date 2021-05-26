@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Size Colors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @size_colors.each do |size_color| %>
+      <tr>
+        <td><%= link_to 'Show', size_color %></td>
+        <td><%= link_to 'Edit', edit_size_color_path(size_color) %></td>
+        <td><%= link_to 'Destroy', size_color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Size Color', new_size_color_path %>

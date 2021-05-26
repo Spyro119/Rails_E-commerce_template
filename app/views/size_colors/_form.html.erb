@@ -1,0 +1,17 @@
+<%= form_with(model: size_color, local: true) do |form| %>
+  <% if size_color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(size_color.errors.count, "error") %> prohibited this size_color from being saved:</h2>
+
+      <ul>
+        <% size_color.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

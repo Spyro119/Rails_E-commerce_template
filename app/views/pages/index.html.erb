@@ -1,0 +1,36 @@
+			<section id="slider" class="fullheight" >
+				<div class="swiper-container has-fixed-footer" data-effect="slide" data-autoplay="false">
+					<div class="swiper-wrapper">
+						<%  @index_images.each do |img| %>
+						<div class="swiper-slide" style="background-image: url('<%= img.image %>');">
+							<div class="overlay dark-1"></div>
+							<div class="display-table">
+								<div class="display-table-cell vertical-align-middle">
+									<div class="container">
+										<div class="slider-featured-text absolute bottom-right text-right">
+											<h1 class="text-white wow fadeInUp" data-wow-delay="0.4s">
+												<em class="fw-300 text-white"> <%= img.titre %></em>
+											</h1>
+											<h2 class="fw-300 text-white wow fadeInUp" data-wow-delay="0.8s"><%=img.description%></h2> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<% end%>
+					</div>
+
+					<!-- Swiper Pagination -->
+					<div class="swiper-pagination"></div>
+
+					<!-- Swiper Arrows -->
+					<div class="swiper-button-next"><i class="fa fa-angle-right"></i></div>
+					<div class="swiper-button-prev"><i class="fa fa-angle-left"></i></div>
+				</div>
+					
+			</section>
+			<!-- /SLIDER -->
+
+
+
+	<%= render :partial => 'layouts/footer' %>

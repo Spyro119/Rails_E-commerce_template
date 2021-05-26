@@ -1,0 +1,97 @@
+// Place all the styles related to the produits controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+			
+        /* 1 Column */
+        .shop-item-list>.col-lg-12>.shop-item {
+        	position:relative;
+        	min-height:230px;
+        }
+        .shop-item-list>.col-lg-12 {
+        	margin-bottom:30px;
+        	width:100%;
+        }
+        .shop-item-list>.col-lg-12>.shop-item h2 {
+        	font-size:20px;
+        }
+        .shop-item-list>.col-lg-12>.shop-item>.thumbnail,
+        .shop-item-list>.col-md-12>.shop-item>.thumbnail {
+        	float:left;
+        	width:200px;
+        }
+        
+        .shop-item-list>.col-lg-12>.shop-item>.shop-item-summary,
+        .shop-item-list>.col-md-12>.shop-item>.shop-item-summary {
+        	text-align:left !important;
+        	position:absolute;
+        	left:230px;
+        }
+        .shop-item-list>.col-lg-12>.shop-item>.shop-item-buttons,
+        .shop-item-list>.col-md-12>.shop-item>.shop-item-buttons {
+        	text-align:left;
+        }
+        .shop-item-list>.col-lg-12>.shop-item>.shop-item-summary>.shop-item-price>span,
+        .shop-item-list>.col-md-12>.shop-item>.shop-item-summary>.shop-item-price>span {
+        	padding-left:0;
+        }
+        .shop-item-list>.col-lg-12>.shop-item p{
+        	margin:15px 0;
+        	display:inline-block;
+        }
+
+        @media only screen and (max-width: 480px) {
+        	.shop-item-list>.col-lg-12>.shop-item {
+        		min-height:100px;
+        	}
+        	.shop-item-list>.col-lg-12>.shop-item>.thumbnail,
+        	.shop-item-list>.col-md-12>.shop-item>.thumbnail {
+        		float:none;
+        		width:100%;
+        	}
+        	.shop-item-list>.col-lg-12>.shop-item>.shop-item-summary,
+        	.shop-item-list>.col-md-12>.shop-item>.shop-item-summary {
+        		position:relative;
+        		left:0;
+        	}
+        	.shop-item-list>.col-lg-12>.shop-item>.shop-item-buttons,
+        	.shop-item-list>.col-md-12>.shop-item>.shop-item-buttons,
+        	.shop-item-list>.col-lg-12>.shop-item>.shop-item-summary,
+        	.shop-item-list>.col-md-12>.shop-item>.shop-item-summary {
+        		float:none;
+        		text-align:center !important;
+        	}
+        	.shop-item-list>.col-lg-12>.shop-item>.shop-item-summary>.shop-item-price>span,
+        	.shop-item-list>.col-md-12>.shop-item>.shop-item-summary>.shop-item-price>span {
+        		padding:0 10px;
+        	}
+        }
+
+
+
+        // 2 COLUMNS - RECALIBRATE FOR LONG TITLES
+        
+        ul.shop-item-list>li.col-lg-6:nth-child(2n+1),
+        ul.shop-item-list>li.col-md-6:nth-child(2n+1) {
+            clear:both;
+        }
+
+
+
+        /* // Stuff to change probably */
+        // INDEX PRODUCTS STYLE
+        // THIS, is for pictures dimensions on INDEX products
+        .shop-item-list>.col-lg-12>.shop-item>.thumbnail,
+			#resize, 
+			.shop-item-list>.col-md-12>.shop-item>.thumbnail>.resize {
+				width:	822px;
+				height: 836 px;
+            }
+
+            // THIS is for the cart text, title, price and desc of products
+        .shop-item-summary{
+            margin-left: 700px;
+            margin-top: 100px;
+        }
+
+        // SHOW PRODUCT STYLE

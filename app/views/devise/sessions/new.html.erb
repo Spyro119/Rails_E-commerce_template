@@ -1,0 +1,43 @@
+	<body class="smoothscroll enable-animation">
+
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 offset-md-3">
+							<div>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'm-100'} ) do |f| %>
+									<div class="clearfix">
+										<!-- Email/Username -->
+										<div class="form-group">
+                      <%= f.text_field :login, placeholder: "Identifiant/email", autofocus: true, autocomplete: "email", :class => 'form-control', :required => true %>
+										</div>
+										<!-- Password -->
+										<div class="form-group">
+                    <%= f.password_field :password, placeholder: "Mot de passe", autocomplete: "current-password", :class => 'form-control', :required => true %>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6 col-6">
+											<!-- Inform Tip -->                                        
+											<div class="form-tip pt-20">
+												<a class="no-text-decoration fs-13 mt-10 block" href="#">Mot de passe oublié?</a>
+											</div>
+										</div>
+									</div>
+									<div class="mt-30 text-center">
+                    					<div class="btn ">
+                    					    <%= f.submit "Connexion", :class => 'btn btn-primary'%>
+                    					</div>
+										<div class="mt-10 text-center">
+										<%= link_to 'Créer un compte', new_user_registration_path, :class => "btn btn-primary" %>
+								</div>
+									</div>
+                  				<% end %>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+	</body>
+</html>

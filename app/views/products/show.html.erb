@@ -1,0 +1,434 @@
+	<section class="page-header page-header-xs">
+		<div class="container">
+			<h1><%= @product.titre %></h1>
+			<!-- breadcrumbs -->
+			<ol class="breadcrumb">
+				<li><%= link_to "Accueil", root_url %></li>
+				<li><%= link_to "Retour", :back %></li>
+			</ol><!-- /breadcrumbs -->
+		</div>
+	</section>
+
+			<section>
+				<div class="container">
+					<div class="row">
+
+						<!-- IMAGE -->
+						<div class="col-lg-4 col-sm-4">
+							
+							<div class="thumbnail relative mb-3">
+								<!-- 
+									IMAGE ZOOM 
+									data-mode="mouseover|grab|click|toggle"
+								-->
+								<figure id="zoom-primary" class="zoom" data-mode="mouseover">
+									<a class="lightbox bottom-right" href="<%= @product.images.first.photo%>" data-plugin-options='{"type":"image"}'><i class="fa fa-search"></i></a>
+									<img class="img-fluid" src="<%= @product.images.first.photo%>" width="1200" height="1500" alt="<%= @product.titre %>" />
+								</figure>
+							</div>
+
+							<!-- Thumbnails (required height:100px) -->
+							<div data-for="zoom-primary" class="zoom-more owl-carousel owl-padding-3 featured" data-plugin-options='{"singleItem": false, "autoPlay": false, "navigation": true, "pagination": false}'>
+								<a class="thumbnail active" href="<%= @product.images.first.photo %>">
+									<img src="<%= @product.images.first.photo %>" height="100" alt="" />
+								</a>
+
+								<% @product.images.each do |image| %>
+									<% if image != @product.images.first %>								
+								<a class="thumbnail" href="<%= image.photo %>">
+									<img src="<%= image.photo %>" height="100" alt="" />
+								</a>
+								<%end%>
+								<%end%>
+							</div>
+							<!-- /Thumbnails -->
+
+						</div>
+						<!-- /IMAGE -->
+
+
+						<!-- ITEM DESC -->
+						<div class="col-lg-5 col-sm-8">
+							<!-- buttons -->
+							<div class="float-right">
+							</div>
+							<!-- /buttons -->
+							<!-- price -->
+							<div class="shop-item-price">
+								<%= ActionController::Base.helpers.number_to_currency(@product.prix) %> CAD
+							</div>
+							<!-- /price -->
+							<hr />
+
+							<div class="clearfix mb-30">
+							<% if @product.total_quantity > 0 %>
+								<span class="float-right text-success"><i class="fa fa-check"></i> Disponible </span>
+								<% else %>
+								<span class="float-right text-danger"><i class="fa fa-remove"></i> Non disponible </span>
+								<%end%>
+							</div>
+							<!-- short description -->
+							<p><%= @product.description %>! </p>
+							<hr />
+
+							<!-- FORM -->
+							<%= form_for @product do |f| %>
+							<form class="clearfix form-inline m-0" method="get" action="">
+								<input type="hidden" name="product_id" value="<%= @product.id %>" />
+								<!-- see assets/js/view/demo.shop.js -->
+
+								<%# Attributes there  %>
+								<input type="hidden" id="product_id" name="color" value="<%=@product.id%>" />
+								<input type="" id="color" name="color" value="<%= @product.sizes.first.colors.first.name %>" />
+								<input type="" id="qty" name="qty" value="1" />
+								<input type="" id="size" name="size" value="<%= @product.sizes.first.name %>" />
+								<!-- see assets/js/view/demo.shop.js -->
+								
+
+								<div class="btn-group float-left product-opt-size">
+									
+									<!-- data-val = size value or size id -->
+									<%= select_tag "product_size", options_from_collection_for_select(@product.sizes, "name", "name") %>
+								</div>
+								<!-- /btn-group -->
+
+										<%# for each color, here. %>
+									<div class="btn-group float-left product-opt-qty">
+									<%= select_tag "product_colors", options_from_collection_for_select(@product.sizes.first.colors, "name", "name") %>
+
+								</div><!-- /btn-group -->
+
+								<div class="btn-group float-left product-opt-qty">
+
+									 <select name="quantity" class= "product-qty-dd" id="product_quantity" >
+									<% (1..@product.sizes.first.colors.first.quantity).each do |i| %>
+
+										<option value="<%= i%> " data-val="<%= i%>"><%=i%></option>
+
+									<%end%>
+									</select> 
+								</div>
+								
+								
+								<!-- /btn-group -->
+								<button class="btn btn-primary float-left product-add-cart rad-0">ADD TO CART</button>
+								<%end%>
+							</form>
+							<!-- /FORM -->
+							<hr/>
+						</div>
+						<!-- /ITEM DESC -->
+
+						<!-- INFO -->
+						<%# <div class="col-sm-4 col-md-3"> %>
+							
+							<%# Shipping method, maybe  %>
+
+							<%# <h4 class="fs-18"> %>
+								<%# <i class="fa fa-paper-plane-o"></i>  %>
+								<%# FREE SHIPPING %>
+							<%# </h4> %>
+							<%# <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla.</p> %>
+							
+
+							<%# Warranty? %>
+
+							<%# <h4 class="fs-18"> %>
+								<%# <i class="fa fa-clock-o"></i> %>
+								<%# 30 DAYS MONEY BACK %>
+							<%# </h4> %>
+							<%# <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla.</p> %>
+
+							
+						<!-- /INFO -->
+
+					</div>
+
+					<!-- RELATED -->
+					<%# <h2 class="owl-featured"><strong>Related</strong> products:</h2>
+					<div class="owl-carousel featured m-0 owl-padding-10" data-plugin-options='{"singleItem": false, "items": "5", "stopOnHover":false, "autoPlay":4500, "autoHeight": false, "navigation": true, "pagination": false}'>
+
+						<!-- item -->
+						<div class="shop-item m-0">
+
+							<div class="thumbnail">
+								<!-- product image(s) -->
+								<a class="shop-item-image" href="shop-single-left.html">
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p13.jpg" alt="shop first image" />
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p14.jpg" alt="shop hover image" />
+								</a>
+								<!-- /product image(s) -->
+
+								<!-- product more info -->
+								<div class="shop-item-info">
+									<span class="badge badge-success">NEW</span>
+									<span class="badge badge-danger">SALE</span>
+								</div>
+								<!-- /product more info -->
+							</div>
+							
+							<div class="shop-item-summary text-center">
+								<h2>Cotton 100% - Pink Shirt</h2>
+								
+								<!-- rating -->
+								<div class="shop-item-rating-line">
+									<div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div>
+								</div>
+								<!-- /rating -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									<span class="line-through">$98.00</span>
+									$78.00
+								</div>
+								<!-- /price -->
+							</div>
+
+								<!-- buttons -->
+								<div class="shop-item-buttons text-center">
+									<a class="btn btn-light" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to Cart</a>
+								</div>
+								<!-- /buttons -->
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="shop-item m-0">
+
+							<div class="thumbnail">
+								<!-- product image(s) -->
+								<a class="shop-item-image" href="shop-single-left.html">
+									<!-- CAROUSEL -->
+									<div class="owl-carousel owl-padding-0 m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3000, "navigation": false, "pagination": false, "transitionStyle":"fadeUp"}'>
+										<img class="img-fluid" src="demo_files/images/shop/products/300x450/p5.jpg" alt="">
+										<img class="img-fluid" src="demo_files/images/shop/products/300x450/p1.jpg" alt="">
+									</div>
+									<!-- /CAROUSEL -->
+								</a>
+								<!-- /product image(s) -->
+							</div>
+							
+							<div class="shop-item-summary text-center">
+								<h2>Pink Dress 100% Cotton</h2>
+								
+								<!-- rating -->
+								<div class="shop-item-rating-line">
+									<div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div>
+								</div>
+								<!-- /rating -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									$44.00
+								</div>
+								<!-- /price -->
+							</div>
+
+								<!-- buttons -->
+								<div class="shop-item-buttons text-center">
+									<a class="btn btn-light" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to Cart</a>
+								</div>
+								<!-- /buttons -->
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="shop-item m-0">
+
+							<div class="thumbnail">
+								<!-- product image(s) -->
+								<a class="shop-item-image" href="shop-single-left.html">
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p2.jpg" alt="shop first image" />
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p12.jpg" alt="shop hover image" />
+								</a>
+								<!-- /product image(s) -->
+
+								<!-- product more info -->
+								<div class="shop-item-info">
+									<span class="badge badge-success">NEW</span>
+									<span class="badge badge-danger">SALE</span>
+								</div>
+								<!-- /product more info -->
+							</div>
+							
+							<div class="shop-item-summary text-center">
+								<h2>Black Fashion Hat</h2>
+								
+								<!-- rating -->
+								<div class="shop-item-rating-line">
+									<div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div>
+								</div>
+								<!-- /rating -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									<span class="line-through">$77.00</span>
+									$65.00
+								</div>
+								<!-- /price -->
+							</div>
+
+								<!-- buttons -->
+								<div class="shop-item-buttons text-center">
+									<a class="btn btn-light" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to Cart</a>
+								</div>
+								<!-- /buttons -->
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="shop-item m-0">
+
+							<div class="thumbnail">
+								<!-- product image(s) -->
+								<a class="shop-item-image" href="shop-single-left.html">
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p8.jpg" alt="shop first image" />
+								</a>
+								<!-- /product image(s) -->
+
+								<!-- countdown -->
+								<div class="shop-item-counter">
+									<div class="countdown" data-from="December 31, 2020 08:22:01" data-labels="years,months,weeks,days,hour,min,sec"><!-- Example Date From: December 31, 2018 15:03:26 --></div>
+								</div>
+								<!-- /countdown -->
+							</div>
+							
+							<div class="shop-item-summary text-center">
+								<h2>Beach Black Lady Suit</h2>
+								
+								<!-- rating -->
+								<div class="shop-item-rating-line">
+									<div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div>
+								</div>
+								<!-- /rating -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									$56.00
+								</div>
+								<!-- /price -->
+							</div>
+
+								<!-- buttons -->
+								<div class="shop-item-buttons text-center">
+									<a class="btn btn-light" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to Cart</a>
+								</div>
+								<!-- /buttons -->
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="shop-item m-0">
+
+							<div class="thumbnail">
+								<!-- product image(s) -->
+								<a class="shop-item-image" href="shop-single-left.html">
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p7.jpg" alt="shop first image" />
+								</a>
+								<!-- /product image(s) -->
+							</div>
+							
+							<div class="shop-item-summary text-center">
+								<h2>Town Dress - Black</h2>
+								
+								<!-- rating -->
+								<div class="shop-item-rating-line">
+									<div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div>
+								</div>
+								<!-- /rating -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									$154.00
+								</div>
+								<!-- /price -->
+							</div>
+
+								<!-- buttons -->
+								<div class="shop-item-buttons text-center">
+									<a class="btn btn-light" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to Cart</a>
+								</div>
+								<!-- /buttons -->
+						</div>
+						<!-- /item -->
+
+						<!-- item -->
+						<div class="shop-item m-0">
+
+							<div class="thumbnail">
+								<!-- product image(s) -->
+								<a class="shop-item-image" href="shop-single-left.html">
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p6.jpg" alt="shop first image" />
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p14.jpg" alt="shop hover image" />
+								</a>
+								<!-- /product image(s) -->
+							</div>
+							
+							<div class="shop-item-summary text-center">
+								<h2>Chick Lady Fashion</h2>
+								
+								<!-- rating -->
+								<div class="shop-item-rating-line">
+									<div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div>
+								</div>
+								<!-- /rating -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									$167.00
+								</div>
+								<!-- /price -->
+							</div>
+
+								<%# <!-- buttons -->
+								<div class="shop-item-buttons text-center">
+									<a class="btn btn-light" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to Cart</a>
+								</div>
+								<!-- /buttons -->
+						</div> %>
+						<!-- /item -->
+
+						<!-- item -->
+						<%# <div class="shop-item m-0">
+
+							<div class="thumbnail">
+								<!-- product image(s) -->
+								<a class="shop-item-image" href="shop-single-left.html">
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p11.jpg" alt="shop hover image" />
+									<img class="img-fluid" src="demo_files/images/shop/products/300x450/p3.jpg" alt="shop first image" />
+								</a>
+								<!-- /product image(s) -->
+							</div>
+							
+							<div class="shop-item-summary text-center">
+								<h2>Black Long Lady Shirt</h2>
+								
+								<!-- rating -->
+								<div class="shop-item-rating-line">
+									<div class="rating rating-0 fs-13"><!-- rating-0 ... rating-5 --></div>
+								</div>
+								<!-- /rating -->
+
+								<!-- price -->
+								<div class="shop-item-price">
+									$128.00
+								</div>
+								<!-- /price -->
+							</div>
+
+								<!-- buttons -->
+								<div class="shop-item-buttons text-center">
+									<a class="btn btn-light" href="shop-cart.html"><i class="fa fa-cart-plus"></i> Add to Cart</a>
+								</div>
+								<!-- /buttons -->
+						</div> %>
+						<!-- /item -->
+
+					<%# </div> %> 
+					<!-- /RELATED -->
+
+				</div>
+			</section>
+			<!-- / -->
+		<%= render :partial => 'layouts/footer' %>
+			
