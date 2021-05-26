@@ -42,6 +42,7 @@ Javascript
 jQuery
 HTML5
 Css/Bootstrap
+Redis
 ```
 
 ## Contributing
@@ -75,3 +76,7 @@ rails s
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+
+
+### Note
+This repo is far from being finished. 
