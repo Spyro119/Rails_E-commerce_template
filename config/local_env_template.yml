@@ -1,0 +1,13 @@
+WEB_APP_NAME: "Your Website name"
+
+# DB settings
+DB_NAME: "Your DB name" #used for developpement
+DB_USER_NAME: "Your DB User Name"
+DB_PASSWORD: "Your DB user password"
+DB_HOSTNAME: "Your DB HOSTNAME"
+DB_PRODUCTION_NAME: "Your DB for production name"
+
+# TrueMail settings
+
+TRUE_MAIL_VERIFIER: 'Your E-mail' # Can use your own personnal e-mail, but is recommended to use the same mailer as the one used for this website if setup.
+VERIFIER_DOMAIN: "Your E-Mail verifier Domain" #Ex: gmail.com

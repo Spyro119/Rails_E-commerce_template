@@ -1,11 +1,11 @@
 
 Truemail.configure do |config|
   # Required parameter. Must be an existing email on behalf of which verification will be performed
-  config.verifier_email = 'samueljubinville119@gmail.com'
+  config.verifier_email = ENV["TRUE_MAIL_VERIFIER"]
 
   # Optional parameter. Must be an existing domain on behalf of which verification will be performed.
   # By default verifier domain based on verifier email
-  config.verifier_domain = 'gmail.com'
+  config.verifier_domain = ENV["VERIFIER_DOMAIN"]
 
   # Optional parameter. You can override default regex pattern
 #   config.email_pattern = /regex_pattern/

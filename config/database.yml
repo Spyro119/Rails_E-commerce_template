@@ -8,17 +8,17 @@ default: &default
   adapter: mysql2
   database: e-commerce-test
   host: localhost
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
+  username: <%= ENV['DB_USER_NAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   encoding: utf8
 
 development:
   <<: *default
   adapter: mysql2
-  database: e-commerce_template
+  database: <%= ENV['DB_NAME'] %>
   host: localhost
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
+  username: <%= ENV['DB_USER_NAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   encoding: utf8
 
 # Warning: The database defined as "test" will be erased and
@@ -30,4 +30,4 @@ test:
 
 production:
   <<: *default
-  database: e-commerce_template
+  database: <%= ENV['PRODUCTION_DB_NAME'] %>

@@ -134,6 +134,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -300,6 +304,7 @@ DEPENDENCIES
   devise-i18n
   jbuilder (~> 2.7)
   jquery-ui-rails
+  letter_opener
   listen (~> 3.2)
   mini_magick
   mysql2 (>= 0.5.3)

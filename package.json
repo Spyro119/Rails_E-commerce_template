@@ -1,5 +1,5 @@
 {
-  "name": "Dyfresh_WebServer",
+  "name": "template_webserver",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

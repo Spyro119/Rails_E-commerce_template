@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.find(params[:id])
+    @category = Category.find(params[: ])
     @products = Array.new
     @products_ = Product.all
     @products_.each do |product|
