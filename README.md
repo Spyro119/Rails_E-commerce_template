@@ -21,7 +21,7 @@ bundle
 For a quick Set-up, simply rename config/local_env_template.yml to config/local_env_template.yml and set your Credentials.
 
 ```bash
-sudo mv config/local_env_template.yml config/_local_env.yml
+sudo mv config/local_env_template.yml config/local_env.yml
 ```
 
 ```yml
