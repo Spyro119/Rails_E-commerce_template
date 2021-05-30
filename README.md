@@ -13,15 +13,18 @@ I18n.default_locale = :en # :fr is available at the moment
 
 ## Getting Started
 
-Simply install the dependencies at root of App
-```bash 
+Clone repo and install dependencies
+```bash
+git clone https://github.com/Spyro119/Rails_E-commerce_template.git
+cd E-commerce_template
 bundle
-```
 
+```
 For a quick Set-up, simply rename config/local_env_template.yml to config/local_env_template.yml and set your Credentials.
 
 ```bash
 sudo mv config/local_env_template.yml config/local_env.yml
+nano config/local_env.yml # Or with any editor
 ```
 
 ```yml
@@ -32,7 +35,12 @@ DB_NAME: "Your DB name" #used for developpement
 DB_USER_NAME: "Your DB User Name"
 DB_PASSWORD: "Your DB user password"
 DB_HOSTNAME: "Your DB HOSTNAME"
-DB_PRODUCTION_NAME: "Your DB for production name"
+# TEST ENV
+TEST_DB_NAME: "Your test DB_NAME"
+TEST_DB_HOST: "Your test DB_HOSTNAME"
+# Production env
+PRODUCTION_DB_HOST: "Your production DB_HOSTNAME"
+PRODUCTION__DB_NAME: "Your Production DB_NAME"
 
 # TrueMail settings
 
@@ -42,7 +50,20 @@ VERIFIER_DOMAIN: "Your E-Mail verifier Domain" #Ex: gmail.com
 
 Truemail gem is used to verify that e-mails domain exist upon sign-in. Feel free to change settings in initialisers/Truemail.rb and whitelist/blacklist domains if needed.
 
-And run the web application and go to localhost:3000/ 
+Set database with theses commands in terminal
+
+```bash
+rake db:create
+rake db:migrate
+```
+
+And to access the admin section, you will need to create an admin. To do so, go into rails console and create an admin 
+```bash
+rails c
+User.create!(is_admin: true, username: "admin", password: "password" , email: "email@domain.com", first_name: "first_name", last_name: "Last_name")
+```
+
+Then run the web application and go to localhost:3000/ 
 ```bash 
 rails s
 ```

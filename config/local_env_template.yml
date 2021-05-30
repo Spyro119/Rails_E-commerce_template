@@ -5,7 +5,12 @@ DB_NAME: "Your DB name" #used for developpement
 DB_USER_NAME: "Your DB User Name"
 DB_PASSWORD: "Your DB user password"
 DB_HOSTNAME: "Your DB HOSTNAME"
-DB_PRODUCTION_NAME: "Your DB for production name"
+# TEST ENV
+TEST_DB_NAME: "Your test DB_NAME"
+TEST_DB_HOST: "Your test DB_HOSTNAME"
+# Production env
+PRODUCTION_DB_HOST: "Your production DB_HOSTNAME"
+PRODUCTION_DB_NAME: "Your Production DB_NAME"
 
 # TrueMail settings
 

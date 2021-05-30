@@ -7,7 +7,7 @@
 default: &default
   adapter: mysql2
   database: e-commerce-test
-  host: localhost
+  host: <%= ENV['DB_HOST'] %>
   username: <%= ENV['DB_USER_NAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   encoding: utf8
@@ -16,7 +16,16 @@ development:
   <<: *default
   adapter: mysql2
   database: <%= ENV['DB_NAME'] %>
-  host: localhost
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USER_NAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  encoding: utf8
+
+production:
+  <<: *default
+  adapter: mysql2
+  database: <%= ENV['PRODUCTION_DB_NAME'] %>
+  host: <%= ENV['PRODUCTION_DB_HOST'] %>
   username: <%= ENV['DB_USER_NAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   encoding: utf8
