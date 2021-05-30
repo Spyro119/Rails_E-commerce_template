@@ -118,8 +118,9 @@ Open an issue, fork this repo, create a branch and commit your changes and open 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 
 ### Note
-This repo is far from being finished. 
+This repo is far from being finished.
+To see what's coming next, see [this](TODO) for details.
