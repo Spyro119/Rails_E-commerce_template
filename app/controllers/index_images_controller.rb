@@ -36,7 +36,7 @@ class IndexImagesController < ApplicationController
 
     respond_to do |format|
       if @index_image.save
-        format.html { redirect_to @index_image, notice: 'Index image was successfully created.' }
+        format.html { redirect_to @index_image, notice: il18n.t('notice.model.action.create')  }
         format.json { render :show, status: :created, location: @index_image }
       else
         format.html { render :new }

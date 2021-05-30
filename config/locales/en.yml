@@ -31,3 +31,26 @@
 
 en:
   hello: "Hello world"
+
+# Flash messages
+notice:
+  models: 
+    action: 
+      create: "%{model_label} was successfully created."
+      one: catégorie
+      other: catégories
+    product_category: 
+      one: catégorie de produits
+      other: catégories de produits
+    product_image: 
+      one: image de produits
+      other: images de produits
+    user:
+      one: utilisateur
+      other: utilisateurs
+    image: 
+      one: image
+      other: images
+    product:
+      one: produit
+      other: produits
