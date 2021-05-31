@@ -30,8 +30,6 @@
 /storage/*
 !/storage/.keep
 
-/public/assets
-public/
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
@@ -46,6 +44,8 @@ yarn-debug.log*
 
 config/Application.yml
 Product.md
-public/
+# Those are generated when uploading images on <website.com>/admin upon index_image creation and Image creation.
+public/Products/ 
+public/index_image
 
 config/local_env.yml
