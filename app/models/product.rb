@@ -17,6 +17,13 @@ class Product < ApplicationRecord
     # validates_format_of :prix
     enum weight_type: {Lbs: "lbs", Kg: "kg"}
 
+    def cart_action(current_user_id)
+      if $redis.sismember "cart#{current_user_id}", id
+        "Remove from"
+      else
+        "Add to"
+      end
+    end
 
     def default_values
         if self.production_cost.nil?

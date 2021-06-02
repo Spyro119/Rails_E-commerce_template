@@ -112,6 +112,7 @@ GEM
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
+    hiredis (0.6.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -326,6 +327,7 @@ DEPENDENCIES
   devise
   devise-i18n
   factory_bot
+  hiredis
   jbuilder (~> 2.7)
   jquery-ui-rails
   letter_opener

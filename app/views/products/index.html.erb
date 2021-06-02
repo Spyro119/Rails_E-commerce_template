@@ -55,7 +55,7 @@
 							<%end%>
 								
 							<div class="shop-item-summary">
-								<h2><%= product.titre %></h2>
+								<h2><%= product.title %></h2>
 									
 									<!-- rating -->
 									<%# <div class="rating rating-4 fs-13"><!-- rating-0 ... rating-5 --></div> %>
@@ -68,7 +68,7 @@
 								<!-- price -->
 								<div class="shop-item-price">
 									<%# <span class="line-through">$98.00</span> %>
-									<%= ActionController::Base.helpers.number_to_currency(product.prix)  %> CAD 
+									<%= ActionController::Base.helpers.number_to_currency(product.price)  %> CAD 
 								</div>
 								<!-- /price -->
 

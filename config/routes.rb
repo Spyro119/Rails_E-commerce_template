@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  get 'carts/show'
   resources :images
   # resources :product_images
   # resources :product_categories
   resources :index_images
   resources :products
   resources :categories
+  resource :cart, only: [:show] do
+    put 'add/:id', to: 'carts#add', as: :add_to
+    put 'remove/:id', to: 'carts#remove', as: :remove_from
+  end
+
   # devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
@@ -19,6 +25,7 @@ Rails.application.routes.draw do
   get "pages/login"
   get "index_images" => "index_images#index"
   get "categories/:id" => "categories#show"
+
 
   # post 'pages/login' => 'session#create', :as => :user_session
   

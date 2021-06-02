@@ -91,6 +91,12 @@
 										<ul class="dropdown-menu">
                           					<li> <%= link_to 'Edit my account', edit_user_registration_path  %> </li> 
                           					<li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+											  	<li><%= link_to cart_path do%>
+									   				 My Cart
+									   				(<span class="cart-count"><%=current_user.cart_count%></span>)
+												</li>
+									  <%end%>
+									</li>
 										</ul>
 									</li>
 

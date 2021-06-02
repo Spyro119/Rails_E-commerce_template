@@ -5,6 +5,10 @@ class User < ApplicationRecord
   def login
     @login || self.username || self.email
   end
+
+   def cart_count
+      $redis.scard "cart#{id}"
+   end
  
    private
  
@@ -16,6 +20,8 @@ class User < ApplicationRecord
           where(conditions.to_h).first
        end
    end
+
+  
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

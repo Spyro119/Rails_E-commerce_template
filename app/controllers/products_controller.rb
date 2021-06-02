@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
+
   def index
     time = params[:time]
     # @produxts_for_man = Product.where(:id => params[:sexe])
@@ -15,7 +16,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-    # jsonProduct = @product.to_json
+    @cart_action = @product.cart_action current_user.try :id
+    jsonProduct = @product.to_json
     
     # render json: @product
   end

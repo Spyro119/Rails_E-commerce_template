@@ -90,7 +90,11 @@
 								
 								
 								<!-- /btn-group -->
-								<button class="btn btn-primary float-left product-add-cart rad-0">ADD TO CART</button>
+								<%if signed_in?%>
+									  <%=link_to '', class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
+									    <span><%=@cart_action%></span> Cart
+									  <%end%>
+									<%end %>
 								<%end%>
 							</form>
 							<!-- /FORM -->

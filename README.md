@@ -13,6 +13,8 @@ I18n.default_locale = :en # :fr is available at the moment
 
 ## Getting Started
 
+[Redis installation Instructions](https://redis.io/topics/quickstart).
+
 Clone repo and install dependencies
 ```bash
 git clone https://github.com/Spyro119/Rails_E-commerce_template.git
@@ -62,6 +64,11 @@ And to access the admin section, you will need to create an admin. To do so, go 
 rails c
 User.create!(is_admin: true, username: "admin", password: "password" , email: "email@domain.com", first_name: "first_name", last_name: "Last_name")
 ```
+Start redis server on localhost.
+```bash
+redis-server
+```
+
 
 Then run the web application and go to localhost:3000/ 
 ```bash 
@@ -71,8 +78,8 @@ rails s
 ### Prerequisites
 
 ```
-- ruby 2.7 ~> 5.0
-- Rails
+- ruby 2.7
+- Rails 6.0.3.4
 - Redis
 ```
 
@@ -105,7 +112,7 @@ Javascript
 jQuery
 HTML5
 Css/Bootstrap
-Redis
+Redis 6.2
 ```
 
 ## Contributing
