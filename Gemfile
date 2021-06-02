@@ -59,6 +59,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Rspec for TDD approach
   gem 'rspec-rails'
+  gem 'factory_bot'
+  gem 'shoulda-matchers'
 end
 
 group :development do

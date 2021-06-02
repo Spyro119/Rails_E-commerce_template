@@ -20,7 +20,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :first_name, :last_name, :username, :password, :email, presence: true
-  validates_uniqueness_of :username
+  validates_uniqueness_of :username, :email, case_sensitive: true
   validates_format_of :username, :first_name, :last_name, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validates :email, with: :validate_email
 
@@ -32,7 +32,7 @@ class User < ApplicationRecord
       if email_mx_valid 
          email_smtp_valid = Truemail.valid?(email, with: :smtp)
       else 
-         errors.add(:email, 'non valide')
+         errors.add(:email, 'not valid')
       end
    end
 

@@ -30,17 +30,17 @@
 
  @font-face {
 	font-family: 'fontawesome';
-	src: url('fontawesome-webfont.eot');
-	src: url('fontawesome-webfont.ttf') format('truetype');
-	src: url('fontawesome-webfont.woff') format('woff');
-	src: url('fontawesome-webfont.woff2');
+	src: font-url('fontawesome-webfont.eot');
+	src: font-url('fontawesome-webfont.ttf') format('truetype');
+	src: font-url('fontawesome-webfont.woff') format('woff');
+	src: font-url('fontawesome-webfont.woff2');
  }
  
  @font-face {
 	font-family: 'font-icons';
-	src: url('font-icons.eot');
-	src: url('font-icons.ttf') format('truetype');
-	src: url('font-icons.woff') format('woff');
+	src: font-url('font-icons.eot');
+	src: font-url('font-icons.ttf') format('truetype');
+	src: font-url('font-icons.woff') format('woff');
  }
 
  ::selection {

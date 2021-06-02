@@ -1,4 +1,5 @@
 WEB_APP_NAME: "Your Website name"
+CONTACT_US_PHONE: "+Your contact_phone" # Format => 1 (123) 123-1234 Will be displayed in Footer
 
 # DB settings
 DB_NAME: "Your DB name" #used for developpement
@@ -16,3 +17,17 @@ PRODUCTION_DB_NAME: "Your Production DB_NAME"
 
 TRUE_MAIL_VERIFIER: 'Your E-mail' # Can use your own personnal e-mail, but is recommended to use the same mailer as the one used for this website if setup.
 VERIFIER_DOMAIN: "Your E-Mail verifier Domain" #Ex: gmail.com
+
+# Mailer settings for PRODUCTION env
+ACTION_MAILER_CACHING: false # Boolean value
+MAILER_DELIVERY_METHOD: :smtp # Default value
+MAILER_HOST: 'yoururl.com' #replace with your own url"
+MAILER_DEFAULT_URL_OPTIONS_PROTOCOL: "https" # default value
+MAILER_SENDER: 'change-me@example.com'
+  # # SMTP settings
+SMTP_ADDRESS: "smtp.yourMailerServiceDomain.com"
+SMTP_PORT: 25 # default value
+SMTP_USERNAME: 'your-username'
+SMTP_PASSWORD: 'your-password'
+SMTP_AUTHENTICATION: 'plain' # Default value
+SMTP_ENABLE_STARTTLS_AUTO: true #boolean

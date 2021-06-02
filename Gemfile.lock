@@ -104,6 +104,8 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.10.0)
     execjs (2.7.0)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
     ffi (1.15.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -257,6 +259,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
     simpleidn (0.1.1)
       unf (~> 0.1.4)
     spring (2.1.1)
@@ -320,6 +324,7 @@ DEPENDENCIES
   carrierwave (~> 2.1)
   devise
   devise-i18n
+  factory_bot
   jbuilder (~> 2.7)
   jquery-ui-rails
   letter_opener
@@ -333,6 +338,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   sassc (~> 2.1.0)
   selenium-webdriver
+  shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
   truemail
