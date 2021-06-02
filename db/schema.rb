@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_01_24_200314) do
   end
 
   create_table "index_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "titre"
+    t.string "title"
     t.string "description"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
